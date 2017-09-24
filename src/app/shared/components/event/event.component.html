@@ -1,0 +1,22 @@
+<div class="card event-container">
+  <div>
+    <h2>{{eventData?.name}}</h2>
+    <div>{{eventData?.time | date}}</div>
+    <div [innerHtml]="eventData?.description"></div>
+
+    <div>
+      <a [href]="eventData?.link">{{eventData?.link}}</a>
+    </div>
+  </div>
+
+  <div>
+    <app-rsvp [eventId]="eventData?.id"></app-rsvp>
+    <h3>Lugar</h3>
+    <div>{{eventData?.venue.name}}</div>
+    <img src="{{eventData?.mapPic}}" alt="Mapa para llegar a {{eventData?.venue.name}}">
+
+    <div>
+      {{eventData?.venue.address_1}}, {{eventData?.venue.city}}, {{eventData?.venue.localized_country_name}}
+    </div>
+  </div>
+</div>
