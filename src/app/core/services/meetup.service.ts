@@ -12,4 +12,11 @@ export class MeetupService {
   public getNextEvents() {
     return this.http.get<any>(environment.meetupApi);
   }
+  
+  /**
+   * @returns { HttpResponse } The Meetup API's rsvp action
+   */
+  public rsvp(uid: string, eventId: string | number) {
+    return this.http.post<any>(`${environment.functionsUrl}/rsvp`, {uid, eventId});
+  }
 }

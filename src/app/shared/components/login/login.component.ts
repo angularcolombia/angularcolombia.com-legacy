@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../core/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -10,24 +11,23 @@ import * as firebase from 'firebase/app';
 })
 export class LoginComponent implements OnInit {
 
-  user: Observable<firebase.User>;
+  user;
 
-  constructor(private angularFireAuth: AngularFireAuth) { 
-
-    this.user = angularFireAuth.authState;
-  }
+  constructor(private authenticationService: AuthenticationService) { }
 
   login() {
-    this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(authResponse => {
-      console.log(authResponse);
+    this.authenticationService.signInWithGoogle().then(_ => {
+      this.user = this.authenticationService.user;
     });
   }
 
   logout() {
-    this.angularFireAuth.auth.signOut();
+    this.authenticationService.signOut();
+    this.user = null;
   }
 
   ngOnInit() {
+    this.authenticationService.user$.subscribe(user => this.user = user);
   }
 
 }

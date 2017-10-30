@@ -8,6 +8,7 @@ export const environment = {
     storageBucket: "angularcolombia.appspot.com",
     messagingSenderId: "1085658434396"
   },
-  meetupApi: '/meetup',
+  functionsUrl: 'https://us-central1-angularcolombia.cloudfunctions.net',
+  meetupApi: 'https://diegocoy.com/meetup',
   staticMapsKey: 'AIzaSyCgHnacoojWqeSvsAHK9kNE7hbBb5lIK04'
 };

@@ -2,18 +2,21 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
-
+import { Subject }    from 'rxjs/Subject';
 
 @Injectable()
 export class AuthenticationService {
   
+  private userSource = new Subject<any>();
+  user$ = this.userSource.asObservable();
 
   private _user: firebase.User;
   
     constructor(public angularFireAuth: AngularFireAuth, private angularFireDatabase: AngularFireDatabase) {
       angularFireAuth.authState.subscribe(user => {
-        console.log(user);
-        this.user = user});  
+        this.userSource.next(user);
+        this.user = user;
+      });  
     }
   
     get user(): firebase.User {
@@ -32,12 +35,13 @@ export class AuthenticationService {
       return this.authenticated ? this.user.uid : '';
     }
   
-    signInWithGoogle(): firebase.Promise<any> {
+    signInWithGoogle(): Promise<any> {
       return this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(response => {
-          this.angularFireDatabase.object(`/users/${response.user.uid}`)
-            .subscribe(user => {
-              if (!user.$exists()) {
+          const databaseObject = this.angularFireDatabase.object(`/users/${response.user.uid}`)
+          const databaseObjectObservable = databaseObject.snapshotChanges();
+          databaseObjectObservable.subscribe(user => {
+              if (!user.payload.exists()) {
                 let {displayName, email, emailVerified, photoURL, uid} = response.user;
                 this.angularFireDatabase.object(`/users/${response.user.uid}`).set({
                   displayName,

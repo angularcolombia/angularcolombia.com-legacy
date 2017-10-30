@@ -18,16 +18,18 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.meetupService.getNextEvents().subscribe((eventResponse) => {
       const event = eventResponse[0];
-      const staticMapsUrl = `https://maps.googleapis.com/maps/api/staticmap`;
-      const staticMapsUrlProps = [
-        ['center', `${event.venue.lat},${event.venue.lon}`],
-        ['zoom', '17'],
-        ['markers', `color:red|${event.venue.lat},${event.venue.lon}`],
-        ['size', '300x300'],
-        ['key', environment.staticMapsKey],
-      ].reduce((acc, elem) => acc += encodeURI(`${elem[0]}=${elem[1]}&`), '?');
-      
-      event.mapPic = staticMapsUrl + staticMapsUrlProps;
+      if(event.venue) {
+        const staticMapsUrl = `https://maps.googleapis.com/maps/api/staticmap`;
+        const staticMapsUrlProps = [
+          ['center', `${event.venue.lat},${event.venue.lon}`],
+          ['zoom', '17'],
+          ['markers', `color:red|${event.venue.lat},${event.venue.lon}`],
+          ['size', '300x300'],
+          ['key', environment.staticMapsKey],
+        ].reduce((acc, elem) => acc += encodeURI(`${elem[0]}=${elem[1]}&`), '?');
+        
+        event.mapPic = staticMapsUrl + staticMapsUrlProps;
+      }
 
       this.nextEvent = event;
     });

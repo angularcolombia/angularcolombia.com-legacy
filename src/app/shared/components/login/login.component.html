@@ -1,7 +1,7 @@
 <div class="login-container">
-  <div class="user-name"> {{ (user | async)?.displayName }} </div>
+  <div class="user-name"> {{ user?.displayName }} </div>
   <div>
-    <button class="btn login" (click)="login()" *ngIf="!(user | async)">Login</button>
-    <button class="btn logout" (click)="logout()" *ngIf="(user | async)">Logout</button>
+    <button class="btn login" (click)="login()" *ngIf="!user">Login</button>
+    <button class="btn logout" (click)="logout()" *ngIf="user">Logout</button>
   </div>
 </div>

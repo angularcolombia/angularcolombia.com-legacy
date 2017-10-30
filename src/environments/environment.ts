@@ -13,6 +13,7 @@ export const environment = {
     storageBucket: "",
     messagingSenderId: "824157910462"
   },
-  meetupApi: 'https://angularcolombia.com/meetup',
+  functionsUrl: 'https://us-central1-angularcolombia-dev.cloudfunctions.net',
+  meetupApi: 'http://angularcolombia.local:8090/meetup',
   staticMapsKey: 'AIzaSyCgHnacoojWqeSvsAHK9kNE7hbBb5lIK04'
 };

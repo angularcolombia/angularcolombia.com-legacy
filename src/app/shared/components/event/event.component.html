@@ -18,5 +18,9 @@
     <div>
       {{eventData?.venue.address_1}}, {{eventData?.venue.city}}, {{eventData?.venue.localized_country_name}}
     </div>
+
+    <div>
+      <app-attendees-list [eventId]="eventData?.id"></app-attendees-list>
+    </div>
   </div>
 </div>
