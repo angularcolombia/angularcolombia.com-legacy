@@ -20,7 +20,7 @@ O las características que debería tener el el futuro:
 
 ## Desarrollo
 
-- Si quieres saber cómo iniciar el proyecto para aportar código, dale una leida al archivo [`README.angular-cli.md`.](./ANGULAR-CLI-README.md)
+- Si quieres saber cómo iniciar el proyecto para aportar código, dale una leida al archivo [`README.angular-cli.md`.](./README.angular-cli.md)
 
 - Para instrucciones acerca de cómo aportar al proyecto puedes leer el archivo [`CONTRIBUTING.md`](./CONTRIBUTING.md)
 
