@@ -59,7 +59,11 @@ export class AuthenticationService {
     }
   
     signOut(): void {
-      this.angularFireAuth.auth.signOut();
+      this.angularFireAuth.auth.signOut().then(_ => {
+        this.userSource.next(null);
+      }).catch(_ => {
+        this.userSource.next(null);
+      });
     }
   
 }

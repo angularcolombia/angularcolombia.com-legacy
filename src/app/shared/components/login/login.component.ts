@@ -16,10 +16,12 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService) { }
 
   login() {
-    this.authenticationService.signInWithGoogle().then(_ => {
+    return this.authenticationService.signInWithGoogle().then(() => {
       this.user = this.authenticationService.user;
     });
   }
+
+  
 
   logout() {
     this.authenticationService.signOut();

@@ -1,3 +1,4 @@
+import { LoginComponent } from './../login/login.component';
 import { Router } from '@angular/router';
 import { MeetupService } from './../../../core/services/meetup.service';
 import { UserService } from './../../../core/services/user.service';
@@ -25,7 +26,7 @@ export class RsvpComponent implements OnInit, OnChanges {
     private angularFireDatabase: AngularFireDatabase,
     private userService: UserService,
     private meetupService: MeetupService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -60,14 +61,23 @@ export class RsvpComponent implements OnInit, OnChanges {
   }
   
   going() {
-    if(this.userAuthenticated) {
-      // invocar lógica de login
-    }
-
-    if(this.selectedEvent) {
-      this.meetupService.rsvp(this.authenticationService.user.uid, this.selectedEvent).subscribe(response => {
-        this.rsvpd = response.rsvpd;
+    if(!this.userAuthenticated) {
+      const loginComponent = new LoginComponent(this.authenticationService);
+      loginComponent.login().then(_ => {
+        this.rsvp();
       });
+    } else {
+      this.rsvp();
+    }
+  }
+
+  private rsvp(uid?: string): void {
+    if(this.selectedEvent) {
+      this.authenticationService.user$.subscribe(user => {
+        this.meetupService.rsvp(user.uid, this.selectedEvent).subscribe(response => {
+          this.rsvpd = response.rsvpd;
+        });
+      })
     }
   }
 
