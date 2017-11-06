@@ -36,10 +36,12 @@ export class RsvpComponent implements OnInit, OnChanges {
         this.userDataRef = this.angularFireDatabase.app.database().ref(`/users/${user.uid}`);
         
         this.userDataRef.on('value', snapshot => {
-          this.userStoredData = snapshot.val();
-          const eventsObj = this.userStoredData.events;
-          if(this.userStoredData.events) {
-            this.rsvpd = Object.keys(eventsObj).filter(eventKey => eventsObj[eventKey].eventId === this.eventId).length > 0;
+          if(snapshot.val()) {
+            this.userStoredData = snapshot.val();
+            const eventsObj = this.userStoredData.events;
+            if(this.userStoredData.events) {
+              this.rsvpd = Object.keys(eventsObj).filter(eventKey => eventsObj[eventKey].eventId === this.eventId).length > 0;
+            }
           }
         });
 
@@ -63,7 +65,7 @@ export class RsvpComponent implements OnInit, OnChanges {
   going() {
     if(!this.userAuthenticated) {
       const loginComponent = new LoginComponent(this.authenticationService);
-      loginComponent.login().then(_ => {
+      loginComponent.login().then(() => {
         this.rsvp();
       });
     } else {
@@ -71,13 +73,11 @@ export class RsvpComponent implements OnInit, OnChanges {
     }
   }
 
-  private rsvp(uid?: string): void {
+  private rsvp(): void {
     if(this.selectedEvent) {
-      this.authenticationService.user$.subscribe(user => {
-        this.meetupService.rsvp(user.uid, this.selectedEvent).subscribe(response => {
-          this.rsvpd = response.rsvpd;
-        });
-      })
+      this.meetupService.rsvp(this.authenticationService.user.uid, this.selectedEvent).subscribe(response => {
+        this.rsvpd = response.rsvpd;
+      });
     }
   }
 

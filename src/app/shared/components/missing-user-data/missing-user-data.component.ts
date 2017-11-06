@@ -20,11 +20,7 @@ export class MissingUserDataComponent implements OnInit {
     private angularFireDatabase: AngularFireDatabase
   ) { }
 
-  ngOnInit() {
-    this.authenticationService.user$.subscribe(user => {
-      this.user = user;
-    });
-  }
+  ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes['userStoredData']) {
@@ -34,16 +30,12 @@ export class MissingUserDataComponent implements OnInit {
     }
   }
 
-  public setUserDocument() {
-    const userDataRef: firebase.database.Reference = this.angularFireDatabase.app.database().ref(`/users/${this.user.uid}`);
+  setUserDocument() {
+    const userDataRef: firebase.database.Reference = this.angularFireDatabase.app.database().ref(`/users/${this.authenticationService.user.uid}`);
     userDataRef.update({
-      document: this.document.type,
-      documentType: this.document.number
+      document: this.document.number,
+      documentType: this.document.type
     });
     this.userData = {type: this.document.type, document: this.document.number};
-  }
-
-  private setUserMissingData() {
-
   }
 }

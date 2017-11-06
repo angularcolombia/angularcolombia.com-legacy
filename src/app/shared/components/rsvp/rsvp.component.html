@@ -1,9 +1,14 @@
-<div *ngIf="!userHasDocument">
+<div *ngIf="userAuthenticated">
+  <div *ngIf="!userHasDocument">
     <app-missing-user-data [userStoredData]="userStoredData" *ngIf="userAuthenticated"></app-missing-user-data>
+  </div>
+  <div class="rsvp-completed" *ngIf="rsvpd">
+    <b>¡Ya te registraste!</b>
+  </div>
 </div>
 
-<div>
-  <button class="accent" (click)="going()" *ngIf="!rsvpd">
+  <div>
+  <button class="accent" (click)="going()" *ngIf="!rsvpd || !userAuthenticated">
     ¡Voy!
   </button>
 </div>
