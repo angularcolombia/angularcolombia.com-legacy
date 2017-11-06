@@ -10,7 +10,7 @@ import * as firebase from 'firebase/app';
 })
 export class MissingUserDataComponent implements OnInit {
   document: {type: string; number: string} = {type: 'cc', number: ''};
-  userData = {};
+  userData: {type: string; document: string|number} = {type: '', document: ''};
   user;
 
   @Input() userStoredData;

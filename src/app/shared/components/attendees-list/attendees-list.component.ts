@@ -22,12 +22,16 @@ export class AttendeesListComponent implements OnInit, OnChanges {
   }
 
   private getAttendees() {
-    if (this.authenticationService.authenticated) {
-      this.angularFireDatabase.list(`/events/${this.selectedEvent}/assistants`).valueChanges().
-        subscribe(attendees => {
-          this.attendees = attendees;
-        });
-    }
+    this.authenticationService.user$.subscribe(user => {
+      if(user) {
+        this.angularFireDatabase.list(`/events/${this.selectedEvent}/attendees`).valueChanges().
+          subscribe(attendees => {
+            this.attendees = attendees;
+          });
+      }else {
+        this.attendees = [];
+      }
+    })
   }
 
 
