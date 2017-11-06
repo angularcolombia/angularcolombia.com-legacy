@@ -38,6 +38,8 @@ export class AuthenticationService {
     signInWithGoogle(): Promise<any> {
       return this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(response => {
+          this.userSource.next(response.user);
+          this.user = response.user;
           const databaseObject = this.angularFireDatabase.object(`/users/${response.user.uid}`)
           const databaseObjectObservable = databaseObject.snapshotChanges();
           databaseObjectObservable.subscribe(user => {
@@ -49,7 +51,7 @@ export class AuthenticationService {
                   emailVerified,
                   photoURL,
                   uid
-                })
+                });
               }
             });
         })

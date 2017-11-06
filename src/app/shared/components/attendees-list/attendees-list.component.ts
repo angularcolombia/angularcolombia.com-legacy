@@ -11,6 +11,7 @@ export class AttendeesListComponent implements OnInit, OnChanges {
 
   attendees;
   selectedEvent: number;
+  userAuthenticated = false;
   @Input() eventId;
 
   constructor(
@@ -24,12 +25,14 @@ export class AttendeesListComponent implements OnInit, OnChanges {
   private getAttendees() {
     this.authenticationService.user$.subscribe(user => {
       if(user) {
+        this.userAuthenticated = true;
         this.angularFireDatabase.list(`/events/${this.selectedEvent}/attendees`).valueChanges().
           subscribe(attendees => {
             this.attendees = attendees;
           });
       }else {
         this.attendees = [];
+        this.userAuthenticated = false;
       }
     })
   }

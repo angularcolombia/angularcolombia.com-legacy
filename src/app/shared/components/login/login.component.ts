@@ -16,9 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService) { }
 
   login() {
-    return this.authenticationService.signInWithGoogle().then(() => {
-      this.user = this.authenticationService.user;
-    });
+    return this.authenticationService.signInWithGoogle()
   }
 
   
