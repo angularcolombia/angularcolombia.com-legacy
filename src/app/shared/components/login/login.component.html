@@ -1,7 +1,12 @@
 <div class="login-container">
-  <div class="user-name"> {{ user?.displayName }} </div>
-  <div>
-    <button class="btn login" (click)="login()" *ngIf="!user">Login</button>
-    <button class="btn logout" (click)="logout()" *ngIf="user">Logout</button>
+  <a class="beta-badge" href="https://github.com/angularcolombia/angularcolombia.com">
+    Beta
+  </a>
+  <div class="login-controls ">
+    <div class="user-name"> {{ user?.displayName }} </div>
+    <div>
+      <button class="btn login" (click)="login()" *ngIf="!user">Login</button>
+      <button class="btn logout" (click)="logout()" *ngIf="user">Logout</button>
+    </div>
   </div>
 </div>
