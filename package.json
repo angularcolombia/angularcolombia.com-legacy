@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev-server": "node dev-server/meetup.js"
+    "dev-server": "node dev-server/meetup.js",
+    "build:prod": "ng build --env=prod --aot"
   },
   "private": true,
   "dependencies": {
