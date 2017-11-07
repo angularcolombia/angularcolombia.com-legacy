@@ -1,7 +1,7 @@
 ## Tipo de issue
 
-- [] Tarea
-- [] Bug
+- [ ] Tarea
+- [ ] Bug
 
 ### Descripción
 
@@ -13,5 +13,5 @@
 
 ### Ambiente
   - Navegador:
-  - Versión:
+  - Versión del navegador:
   - Sistema Operativo: 
