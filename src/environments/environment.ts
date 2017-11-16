@@ -15,5 +15,6 @@ export const environment = {
   },
   functionsUrl: 'https://us-central1-angularcolombia-dev.cloudfunctions.net',
   meetupApi: 'http://localhost:8090/meetup',
-  staticMapsKey: 'AIzaSyCgHnacoojWqeSvsAHK9kNE7hbBb5lIK04'
+  staticMapsKey: 'AIzaSyCgHnacoojWqeSvsAHK9kNE7hbBb5lIK04',
+  gtmCode: 'UA-84090066-3'
 };

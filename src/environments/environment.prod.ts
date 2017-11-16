@@ -10,5 +10,6 @@ export const environment = {
   },
   functionsUrl: 'https://us-central1-angularcolombia.cloudfunctions.net',
   meetupApi: 'https://diegocoy.com/meetup',
-  staticMapsKey: 'AIzaSyCgHnacoojWqeSvsAHK9kNE7hbBb5lIK04'
+  staticMapsKey: 'AIzaSyCgHnacoojWqeSvsAHK9kNE7hbBb5lIK04',
+  gtmCode: 'FAKE_GTM_CODE'
 };
