@@ -1,5 +1,5 @@
 <div class="card event-container">
-  <div>
+  <div class="event-description">
     <h2>{{eventData?.name}}</h2>
     <div>{{eventData?.time | date}}</div>
     <div [innerHtml]="eventData?.description"></div>
@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="event-location-attendees">
     <app-rsvp [eventId]="eventData?.id"></app-rsvp>
     <h3>Lugar</h3>
     <div>{{eventData?.venue.name}}</div>
