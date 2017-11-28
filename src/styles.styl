@@ -1,24 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+body,
+html
+    width 100%
+    height 100%
+
 body
-  margin 0
-  font-family 'Source Sans Pro', sans-serif
-  background-color #22283A
+    font-family 'Merriweather', 'Helvetica Neue', Arial, sans-serif
 
-.card
-  background-color #fafafa
-  color #39435f
-  box-shadow 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
-  border-radius 3px
+hr
+    max-width 50px
+    border-width 3px
+    border-color #f90000
+    &.light
+        border-color #fff
 
-button
-  background none
-  border-style double
-  font-size 1.2em
-  padding 0.5em 0.9em 0.5em 0.9em
-  background-color #919bb9
-  &:hover
-    cursor pointer
+a
+    color #f90000
+    -webkit-transition all 0.2s
+    -moz-transition all 0.2s
+    transition all 0.2s
+    &:hover
+        color #f05f40
 
-  &.accent
-    color #fafafa
-    background-color #A852FE
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    font-family 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+
+.bg-primary
+    background-color #f90000 !important
+
+.bg-dark
+    background-color #212529 !important
+
+.text-faded
+    color rgba(255, 255, 255, 0.7)
+
+section {
+  padding: 8rem 0; }
+
+.section-heading {
+  margin-top: 0; }
+
+::-moz-selection {
+  color: #fff;
+  background: #212529;
+  text-shadow: none; }
+
+::selection {
+  color: #fff;
+  background: #212529;
+  text-shadow: none; }
+
+img::selection {
+  color: #fff;
+  background: transparent; }
+
+img::-moz-selection {
+  color: #fff;
+  background: transparent; }
+
+body {
+  -webkit-tap-highlight-color: #212529; }
+
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 300px;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
+
+.btn-xl {
+  padding: 1rem 2rem; }
+
+.btn-primary {
+  background-color: #f90000;
+  border-color: #f90000; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: #fff;
+    background-color: #b70000 !important; }
+  .btn-primary:active, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important; }

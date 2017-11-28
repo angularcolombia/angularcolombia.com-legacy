@@ -7,6 +7,7 @@ import { EventComponent } from './components/event/event.component';
 import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { MissingUserDataComponent } from './components/missing-user-data/missing-user-data.component';
 import { AttendeesListComponent } from './components/attendees-list/attendees-list.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { AttendeesListComponent } from './components/attendees-list/attendees-li
     RsvpComponent,
     MissingUserDataComponent,
     AttendeesListComponent,
-    
+    FooterComponent
   ],
   exports: [
     LoginComponent,
@@ -28,7 +29,8 @@ import { AttendeesListComponent } from './components/attendees-list/attendees-li
     EventComponent,
     RsvpComponent,
     MissingUserDataComponent,
-    AttendeesListComponent
+    AttendeesListComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

@@ -12,6 +12,8 @@ import * as firebase from 'firebase/app';
 export class LoginComponent implements OnInit {
 
   user;
+  isScroll: boolean;
+
 
   constructor(private authenticationService: AuthenticationService) { }
 
@@ -27,7 +29,22 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authenticationService.user$.subscribe(user => this.user = user);
+    this.authenticationService.user$.subscribe(user => {
+      this.user = user      
+    });
+    window.addEventListener('scroll', this.scroll, true);
   }
+
+  ngOnDestroy() {
+    window.removeEventListener('scroll', this.scroll, true);
+  }
+
+  scroll = (): void => {
+      if(document.documentElement.scrollTop > 100){
+        this.isScroll = true;
+      }else {
+        this.isScroll = false;
+      }
+    };
 
 }
