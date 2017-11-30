@@ -1,64 +1,75 @@
-#mainNav {
-  border-bottom: 1px solid rgba(33, 37, 41, 0.1);
-  background-color: #fff;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s; }
-  #mainNav .navbar-brand {
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #F05F40;
-    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
-    #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-      color: #f05f40; }
-  #mainNav .navbar-nav > li.nav-item > a.nav-link,
-  #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-    font-size: .9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #212529; }
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-      color: #F05F40; }
-    #mainNav .navbar-nav > li.nav-item > a.nav-link.active,
-    #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
-      color: #F05F40 !important;
-      background-color: transparent; }
-      #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover,
-      #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
-        background-color: transparent; }
-  @media (min-width: 992px) {
-    #mainNav {
-      border-color: transparent;
-      background-color: transparent; }
-      #mainNav .navbar-brand {
-        color: rgba(255, 255, 255, 0.7); }
-        #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-          color: #fff; }
-      #mainNav .navbar-nav > li.nav-item > a.nav-link {
-        padding: 0.5rem 1rem; }
-      #mainNav .navbar-nav > li.nav-item > a.nav-link,
-      #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-        color: rgba(255, 255, 255, 0.7); }
-        #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
-        #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-          color: #fff; }
-      #mainNav.navbar-shrink {
-        border-bottom: 1px solid rgba(33, 37, 41, 0.1);
-        background-color: #fff; }
-        #mainNav.navbar-shrink .navbar-brand {
-          color: #F05F40; }
-          #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
-            color: #f05f40; }
-        #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
-        #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
-          color: #212529; }
-          #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover,
-          #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-            color: #F05F40; } }
+$color-primary = #e54242
+$color-primary-hover = #b70000
+$color-primary-shadow = rgba(240, 95, 64, 0.5)
+$color-selected = #ffffff
+$color-hover = #f05f40
+$color-dark = #212529
+$color-faded = rgba(255, 255, 255, 0.7)
 
 .user-image    
     width 25px
     height 25px
-    border-radius 50%    
+    border-radius 50%   
+
+.navbar-brand
+    border-bottom 1px solid rgba(33, 37, 41, 0.1)    
+    font-family 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+    -webkit-transition all 0.2s
+    -moz-transition all 0.2s
+    transition all 0.2s
+    font-weight 700
+    text-transform uppercase
+    color #F05F40
+    font-family 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+
+.navbar-brand:focus, .navbar-brand:hover
+    color $color-hover
+
+.navbar-nav > li.nav-item > a.nav-link,
+    .navbar-nav > li.nav-item > a.nav-link:focus
+    font-size .9rem
+    font-weight 700
+    text-transform uppercase
+    color $color-selected
+
+.navbar-nav > li.nav-item > a.nav-link:hover,
+     .navbar-nav > li.nav-item > a.nav-link:focus:hover
+    color $color-hover
+
+.navbar-nav > li.nav-item > a.nav-link.active,
+    .navbar-nav > li.nav-item > a.nav-link:focus.active
+    color $color-hover
+    background-color transparent
+
+.navbar-nav > li.nav-item > a.nav-link.active:hover,
+      .navbar-nav > li.nav-item > a.nav-link:focus.active:hover
+    background-color transparent
+
+@media (min-width: 992px)
+    .navbar-nav
+        border-color transparent
+        background-color transparent
+        & > li
+            &.nav-item
+                & > a
+                    &.nav-link
+                        padding 0.5rem 1rem
+    .navbar-brand
+        color rgba(255, 255, 255, 0.7)
+    .navbar-shrink
+        border-bottom 1px solid rgba(33, 37, 41, 0.1)
+        background-color $color-selected
+        .navbar-brand
+            color $color-hover
+    .navbar-nav > li.nav-item > a.nav-link, .navbar-brand:focus, .navbar-brand:hover
+        color $color-selected
+    .navbar-nav > li.nav-item > a.nav-link:hover, .navbar-nav > li.nav-item > a.nav-link:focus
+        color rgba(255, 255, 255, 0.7)
+    .navbar-nav > li.nav-item > a.nav-link:focus:hover
+        color $color-selected
+    .navbar-shrink .navbar-nav > li.nav-item > a.nav-link, .navbar-shrink .navbar-brand:focus, .navbar-shrink .navbar-brand:hover
+        color $color-hover
+    .navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover, .navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus
+        color $color-dark
+    .navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover
+        color $color-hover
