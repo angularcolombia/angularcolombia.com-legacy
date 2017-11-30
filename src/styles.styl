@@ -1,24 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+$color-primary = #e54242
+$color-primary-hover = #b70000
+$color-primary-shadow = rgba(240, 95, 64, 0.5)
+$color-selected = #ffffff
+$color-hover = #f05f40
+$color-dark = #212529
+$color-faded = rgba(255, 255, 255, 0.7)
+
+$fonts-body = 'Merriweather', 'Helvetica Neue', Arial, sans-serif
+$fonts-text = 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+
+body,
+html
+    width 100%
+    height 100%
+
 body
-  margin 0
-  font-family 'Source Sans Pro', sans-serif
-  background-color #22283A
+    font-family $fonts-body
 
-.card
-  background-color #fafafa
-  color #39435f
-  box-shadow 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
-  border-radius 3px
+hr
+    max-width 50px
+    border-width 3px
+    border-color $color-primary
+    &.light
+        border-color $color-selected
 
-button
-  background none
-  border-style double
-  font-size 1.2em
-  padding 0.5em 0.9em 0.5em 0.9em
-  background-color #919bb9
-  &:hover
-    cursor pointer
+a
+    color $color-primary
+    -webkit-transition all 0.2s
+    -moz-transition all 0.2s
+    transition all 0.2s
+    &:hover
+        color $color-hover
 
-  &.accent
-    color #fafafa
-    background-color #A852FE
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    font-family $fonts-text
+
+.bg-primary
+    background-color $color-primary 
+
+.bg-dark
+    background-color $color-dark
+
+.text-faded
+    color $color-faded
+
+section {
+  padding: 8rem 0; }
+
+.section-heading {
+  margin-top: 0; }
+
+::-moz-selection {
+  color: $color-selected;
+  background: $color-dark;
+  text-shadow: none; }
+
+::selection {
+  color: $color-selected;
+  background: $color-dark;
+  text-shadow: none; }
+
+img::selection {
+  color: $color-selected;
+  background: transparent; }
+
+img::-moz-selection {
+  color: $color-selected;
+  background: transparent; }
+
+body {
+  -webkit-tap-highlight-color: $color-dark; }
+
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 300px;
+  font-family: $fonts-text;
+  color: $color-selected; }
+
+.btn-xl {
+  padding: 1rem 2rem; }
+
+.btn-primary {
+  background-color: $color-primary;
+  border-color: $color-primary; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: $color-selected;
+    background-color: $color-primary-hover; }
+  .btn-primary:active, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem $color-primary-shadow; }

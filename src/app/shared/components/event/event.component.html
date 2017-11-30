@@ -1,26 +1,46 @@
-<div class="card event-container">
-  <div class="event-description">
-    <h2>{{eventData?.name}}</h2>
-    <div>{{eventData?.time | date}}</div>
-    <div [innerHtml]="eventData?.description"></div>
-
-    <div>
-      <a [href]="eventData?.link">{{eventData?.link}}</a>
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Evento</h1>
+          <span class="subheading">Unete a nuestra comunidad</span>
+        </div>
+      </div>
     </div>
   </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="event-description">
+        <h2 class="display-4">{{eventData?.name}}</h2>
+        <p class="text-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{eventData?.time | date}}</p>
+        <hr>
+        <div [innerHtml]="eventData?.description"></div>
 
-  <div class="event-location-attendees">
-    <app-rsvp [eventId]="eventData?.id"></app-rsvp>
-    <h3>Lugar</h3>
-    <div>{{eventData?.venue.name}}</div>
-    <img src="{{eventData?.mapPic}}" alt="Mapa para llegar a {{eventData?.venue.name}}">
-
-    <div>
-      {{eventData?.venue.address_1}}, {{eventData?.venue.city}}, {{eventData?.venue.localized_country_name}}
+        <div>
+          <a [href]="eventData?.link">{{eventData?.link}}</a>
+        </div>
+      </div>      
     </div>
+    <div class="col-lg-4">
+      <div class="event-location-attendees">
+        <app-rsvp [eventId]="eventData?.id"></app-rsvp>
+        <h3 class="display-4">Lugar</h3>
+        <div><i class="fa fa-map-marker" aria-hidden="true"></i> {{eventData?.venue.name}}</div>
+        <div class="row">
+          <img src="{{eventData?.mapPic}}" alt="Mapa para llegar a {{eventData?.venue.name}}">
+        </div>        
 
-    <div>
-      <app-attendees-list [eventId]="eventData?.id"></app-attendees-list>
+        <div class="row">
+          <p>{{eventData?.venue.address_1}}, {{eventData?.venue.city}}</p>
+          <p>{{eventData?.venue.localized_country_name}}</p>
+        </div>      
+      </div>
+      <hr>
+      <app-attendees-list [eventId]="eventData?.id"></app-attendees-list>    
     </div>
   </div>
 </div>

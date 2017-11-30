@@ -1,27 +1,75 @@
-.login-container
-  background-color #1a1f2d
-  display flex
-  justify-content space-between
-  padding 0.5em
-  align-items center
+$color-primary = #e54242
+$color-primary-hover = #b70000
+$color-primary-shadow = rgba(240, 95, 64, 0.5)
+$color-selected = #ffffff
+$color-hover = #f05f40
+$color-dark = #212529
+$color-faded = rgba(255, 255, 255, 0.7)
 
-  &>.login-controls
-    justify-content flex-end
-    display flex
-    flex-direction row
-    align-items center
+.user-image    
+    width 25px
+    height 25px
+    border-radius 50%   
 
-    &>.user-name
-      color #cdded2
-      padding-right 1em
+.navbar-brand
+    border-bottom 1px solid rgba(33, 37, 41, 0.1)    
+    font-family 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+    -webkit-transition all 0.2s
+    -moz-transition all 0.2s
+    transition all 0.2s
+    font-weight 700
+    text-transform uppercase
+    color #F05F40
+    font-family 'Open Sans', 'Helvetica Neue', Arial, sans-serif
 
+.navbar-brand:focus, .navbar-brand:hover
+    color $color-hover
 
-.beta-badge
-  background-color #f944aa
-  color #f3f5f3
-  border-radius 3px
-  padding 3px 9px 3px 9px
-  text-decoration none
-  &:visited
-    background-color #f944aa
-    color #f3f5f3
+.navbar-nav > li.nav-item > a.nav-link,
+    .navbar-nav > li.nav-item > a.nav-link:focus
+    font-size .9rem
+    font-weight 700
+    text-transform uppercase
+    color $color-selected
+
+.navbar-nav > li.nav-item > a.nav-link:hover,
+     .navbar-nav > li.nav-item > a.nav-link:focus:hover
+    color $color-hover
+
+.navbar-nav > li.nav-item > a.nav-link.active,
+    .navbar-nav > li.nav-item > a.nav-link:focus.active
+    color $color-hover
+    background-color transparent
+
+.navbar-nav > li.nav-item > a.nav-link.active:hover,
+      .navbar-nav > li.nav-item > a.nav-link:focus.active:hover
+    background-color transparent
+
+@media (min-width: 992px)
+    .navbar-nav
+        border-color transparent
+        background-color transparent
+        & > li
+            &.nav-item
+                & > a
+                    &.nav-link
+                        padding 0.5rem 1rem
+    .navbar-brand
+        color rgba(255, 255, 255, 0.7)
+    .navbar-shrink
+        border-bottom 1px solid rgba(33, 37, 41, 0.1)
+        background-color $color-selected
+        .navbar-brand
+            color $color-hover
+    .navbar-nav > li.nav-item > a.nav-link, .navbar-brand:focus, .navbar-brand:hover
+        color $color-selected
+    .navbar-nav > li.nav-item > a.nav-link:hover, .navbar-nav > li.nav-item > a.nav-link:focus
+        color rgba(255, 255, 255, 0.7)
+    .navbar-nav > li.nav-item > a.nav-link:focus:hover
+        color $color-selected
+    .navbar-shrink .navbar-nav > li.nav-item > a.nav-link, .navbar-shrink .navbar-brand:focus, .navbar-shrink .navbar-brand:hover
+        color $color-hover
+    .navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover, .navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus
+        color $color-dark
+    .navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover
+        color $color-hover
