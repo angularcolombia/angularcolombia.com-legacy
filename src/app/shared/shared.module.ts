@@ -1,6 +1,8 @@
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedRoutingModule } from './shared-routing.module';
+
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EventComponent } from './components/event/event.component';
@@ -12,7 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedRoutingModule
   ],
   declarations: [
     LoginComponent,

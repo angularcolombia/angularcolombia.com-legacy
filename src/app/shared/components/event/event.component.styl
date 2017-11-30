@@ -1,19 +1,48 @@
-.event-container
-  display flex
-  padding 0.5em
-  height 67vh
-  overflow-y auto
-  
-  .event-description
-    width 70%
+$fonts-text = 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+$color-background = #868e96
+$color-background-o = #212529
 
-h2
-  margin-top 0
-  margin-bottom 0
+header
+    &.masthead
+        margin-bottom 50px
+        background no-repeat center center
+        background-color $color-background
+        background-attachment scroll
+        position relative
+        -webkit-background-size cover
+        -moz-background-size cover
+        -o-background-size cover
+        background-size cover
+        background-image: url("../../../../assets/backgrounds/event-image.png");
 
-h3
-  margin-top 0.2em
-  margin-bottom 0.1em
+header
+    &.masthead
+        .overlay
+            position absolute
+            top 0
+            left 0
+            height 100%
+            width 100%
+            background-color $color-background-o
+            opacity .5
 
-img
-  width 300px
+header
+    &.masthead
+        .site-heading
+            h1
+                font-size 80px
+                color #fff
+
+header.masthead .page-heading, header.masthead .site-heading
+    text-align center
+    padding 100px 0;
+
+header.masthead .page-heading .subheading, header.masthead .site-heading .subheading
+
+        font-size 24px
+        font-weight 300
+        line-height 1.1
+        display block
+        margin 10px 0 0
+        font-family $fonts-text
+        color #fff

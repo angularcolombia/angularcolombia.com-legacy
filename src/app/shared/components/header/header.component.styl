@@ -1,7 +1,11 @@
+$fonts-text = 'Open Sans', 'Helvetica Neue', Arial, sans-serif
+$color-background = #868e96
+$color-background-o = #212529
+
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../../../../assets/backgrounds/bogota-panoramica-shade.jpg");
+  background-image: url("../../../../assets/backgrounds/bogota-panoramica.jpg");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -38,3 +42,14 @@ header.masthead {
         color #2f3640
     p
         color #2f3640
+
+header
+    &.masthead
+        .overlay
+            position absolute
+            top 0
+            left 0
+            height 100%
+            width 100%
+            background-color $color-background-o
+            opacity .5

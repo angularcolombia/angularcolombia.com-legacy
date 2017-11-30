@@ -1,4 +1,5 @@
 <header class="masthead text-center text-white d-flex">
+  <div class="overlay"></div>
   <div class="container my-auto">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -9,7 +10,7 @@
       </div>
       <div class="col-lg-8 mx-auto">
         <div *ngIf="nextEvent" class="next-event-header">
-          <h3 class="text-faded">{{nextEvent?.name}}</h3>
+          <h3 class="text-faded"><a [routerLink]="['/event', nextEvent.id]">{{nextEvent?.name}}</a></h3>
           <p class="text-faded"><i class="fa fa-calendar" aria-hidden="true"></i> {{nextEvent?.time | date}}, {{nextEvent?.time | date: 'shortTime'}}</p>          
           <p class="text-faded"><i class="fa fa-map-marker" aria-hidden="true"></i> {{nextEvent?.venue.address_1}}, {{nextEvent?.venue.city}}</p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" [href]="nextEvent?.link" target="_blank">Unirse</a>

@@ -1,10 +1,18 @@
 <form (ngSubmit)="setUserDocument()" name="missingData" *ngIf="!userData.document" #missingDataForm="ngForm">
-  <input type="text" name="idNumber" [(ngModel)]="document.number" autofocus>
-  <select name="documentType" [(ngModel)]="document.type">
-    <option value="cc">Cédula de Ciudadanía</option>
-    <option value="ce">Cédula de extranjería</option>
-    <option value="pp">Pasaporte</option>
-    <option value="tarjeta de identidad">Tarjeta de Identidad</option>
-  </select>
-  <button type="submit">Enviar</button>
+	<div class="col-lg-12">
+		<div class="form-group input-group">
+	      <input type="text" name="idNumber" class="col-lg-8 form-control" placeholder="Ingresar ID..." aria-label="Ingresar ID..." [(ngModel)]="document.number" autofocus>
+	      <span class="input-group-btn">
+	        <button class="btn btn-secondary" type="submit">Enviar!</button>
+	      </span>
+	    </div>
+	    <div class="form-group">
+	    	<select name="documentType" [(ngModel)]="document.type" class="form-control">
+			    <option value="cc">Cédula de Ciudadanía</option>
+			    <option value="ce">Cédula de extranjería</option>
+			    <option value="pp">Pasaporte</option>
+			    <option value="tarjeta de identidad">Tarjeta de Identidad</option>
+			  </select>
+	    </div>
+	</div>      
 </form>
