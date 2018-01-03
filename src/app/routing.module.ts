@@ -1,24 +1,23 @@
-import { RouteGuardService } from './core/services/route-guard.service';
-import { UserComponent } from './user/user.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import {LoginComponent} from './pages/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
-  },
-  {
-    path: 'user',
-    component: UserComponent,
-    canActivate: [RouteGuardService]
+  }, {
+    path: 'login',
+    component: LoginComponent
+  }, {
+    path: '**',
+    component: NotFoundComponent
   }
 ]
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: [RouteGuardService]
+  exports: [RouterModule]
 })
-export class RoutingModule {}
+export class RoutingModule { }

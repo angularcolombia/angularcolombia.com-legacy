@@ -1,0 +1,59 @@
+/* APP HEADER STYLES*/
+
+.ngco-toolbar {
+    margin-bottom: 10px;
+    min-height: 56px !important;
+}
+.ngco-toolbar .mat-toolbar-row {
+    width: 1137px;
+    margin: 0 auto;
+    padding: 0px 32px;
+}
+.ngco-toolbar button.ngco-link-brand {
+    margin-right: 32px;
+}
+.ngco-toolbar button.ngco-link-brand img.ngco-img-brand {
+    width: 32px;
+    height: 32px;
+    margin: 0px 5px 0px 0px;
+}
+.ngco-toolbar button.ngco-link-brand span.ngco-link-title {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.ngco-toolbar .header-spacer {
+    flex: 1 1 auto;
+}
+button.ngco-toolbar-btn-login {
+    float: right;
+    margin-right: 32px;
+}
+/* general media queries*/
+
+@media (min-width: 0) and (max-width: 959px) {
+    .ngco-toolbar {
+        min-height: 56px;
+    }
+    .ngco-toolbar .md-toolbar-tools {
+        height: 56px;
+        max-height: 56px;
+    }
+}
+/* small screens*/
+
+@media (max-width: 320px) {
+    .ngco-toolbar>md-toolbar button.ngco-link-brand {
+        margin-right: 32px;
+        float: right;
+    }
+    .ngco-toolbar button.ngco-link-brand {
+        float: right;
+    }
+    .ngco-toolbar button.ngco-link-brand img.ngco-toolbar-img-brand {
+        width: 26px;
+        height: 26px;
+    }
+    .ngco-toolbar button.ngco-link-brand span.ngco-toolbar-link-title {
+        font-weight: bold;
+    }
+}

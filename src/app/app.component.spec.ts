@@ -1,30 +1,39 @@
-import { AngularFireAuth } from 'angularfire2/auth';
 import { TestBed, async } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AngularFireAuth } from 'angularfire2/auth';
+
+import { LoginComponent } from './shared/login/login.component';
 import { AppComponent } from './app.component';
 
-import { LoginComponent } from './shared/components/login/login.component';
-
-class mockAngularFireAuth {}
-
 describe('AppComponent', () => {
+  const mockAFAuth = {};
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
         LoginComponent
       ],
-      providers: [
-        {provide: AngularFireAuth, useClass: mockAngularFireAuth}
-      ],
-      schemas: [NO_ERRORS_SCHEMA]
+      imports: [RouterTestingModule],
+      providers: [ {provide: AngularFireAuth, useValue: mockAFAuth} ]
     }).compileComponents();
   }));
-  
+
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  
+
+  // it(`should have as title 'app'`, async(() => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.debugElement.componentInstance;
+  //   expect(app.title).toEqual('app');
+  // }));
+
+  // it('should render title in a h1 tag', async(() => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.debugElement.nativeElement;
+  //   expect(compiled.querySelector('z').textContent).toContain('Welcome to app!!');
+  // }));
 });

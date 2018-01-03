@@ -1,39 +1,46 @@
-import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
-import { RoutingModule } from './routing.module';
-import { HttpClientModule } from '@angular/common/http';
-
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { environment } from '../environments/environment';
+
+import { RoutingModule } from './routing.module';
+import { SharedModule } from "./components/shared/shared.module";
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
+import { HomeComponent } from './pages/home/home.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+/*from angular material*/
+import { MaterialModule } from './material.module';
+/*from angular flex layout*/
+import { FlexLayoutModule } from "@angular/flex-layout";
+/*custom components*/
+import { HeaderComponent } from './pages/header/header.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UserComponent
+    HeaderComponent,
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     RoutingModule,
-    CoreModule,
-    SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
+    SharedModule,
+	BrowserAnimationsModule,
+	/*from angular flex layout*/
+	FlexLayoutModule,
+	/*from angular material*/
+	MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
