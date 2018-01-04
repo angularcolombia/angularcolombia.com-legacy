@@ -20,15 +20,13 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 /*custom components*/
 import { HeaderComponent } from './pages/header/header.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    NotFoundComponent,
-    LoginComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
