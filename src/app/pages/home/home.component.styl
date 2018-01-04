@@ -3,7 +3,7 @@
 header.ngco-welcome-showcase {
     background-image: url('../../../assets/images/welcome_bg.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -38,23 +38,34 @@ header.ngco-welcome-showcase > mat-card>mat-card-actions>button {
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid #f9f9f9;
 }
-/*information sections */
 
-section.ngco-welcome-info {
-    min-height: 200px;
-    padding: 20px;
-    z-index: -100;
-    position: relative;
+/* welcome info box*/
+section.ngco-welcome-info{
+  background:white;
+  padding: 20px;
+  margin:0 auto;
+  height: 70vh;
+  width:260px;
+  margin-top:10px;
+  margin-bottom:20px;
 }
-section.ngco-info-events {
-    background: #f9f9f9;
-}
-/*community*/
 
-.ngco-info-community>.container>div.row {
-    width: auto;
-}
 /*big screens*/
+@media (min-width:420px) and (max-width:540px){
+  section.ngco-welcome-info{
+    width:340px;
+  }
+}
+@media (min-width:540px) and (max-width:800px){
+  section.ngco-welcome-info{
+    width:480px;
+  }
+}
+@media (min-width:800px){
+  section.ngco-welcome-info{
+    width:760px;
+  }
+}
 
 @media(min-width:640px) {
     header.ngco-welcome-showcase > mat-card {
@@ -62,10 +73,6 @@ section.ngco-info-events {
     }
     header.ngco-welcome-showcase > mat-card>mat-card-content>h4,
     header.ngco-welcome-showcase > mat-card>mat-card-content>h6 {
-        font-size: 2em;
-    }
-    .ngco-info-community .container {
-        width: 1160px;
-        margin: 0 auto;
+        font-size: 1em;
     }
 }

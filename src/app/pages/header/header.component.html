@@ -3,27 +3,8 @@
 		<img alt="angular" class="ngco-img-brand" src="../../assets/icons/angular-white-transparent.svg"/>
 		<span class="ngco-link-title">Colombia</span>
 	</button>
-	<button mat-button fxShow="false" fxShow.gt-sm routerLink="/" routerLinkActive="active">
-		<span>Comunidad</span>
-	</button>
-	<button mat-button fxShow="false" fxShow.gt-sm routerLink="/" routerLinkActive="active">
-		<span>Eventos</span>
-	</button>
 	<span class="header-spacer">&nbsp;</span>
 	<button mat-icon-button class="ngco-toolbar-user" routerLink="/login" routerLinkActive="active">
 		<mat-icon>person_outline</mat-icon>
 	</button>
-	<button mat-icon-button class="ngco-toolbar-menu-toggle" fxHide="false" fxHide.gt-sm [matMenuTriggerFor]="menu">
-		<mat-icon>more_vert</mat-icon>
-	</button>
-	<mat-menu #menu="matMenu">
-		<button mat-menu-item routerLink="/" routerLinkActive="active">
-			<mat-icon>group</mat-icon>
-			<span>Comunidad</span>
-		</button>
-		<button mat-menu-item routerLink="/" routerLinkActive="active">
-			<mat-icon>event_note</mat-icon>
-			<span>Eventos</span>
-		</button>
-	</mat-menu>
 </mat-toolbar>

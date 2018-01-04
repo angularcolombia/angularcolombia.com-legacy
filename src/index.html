@@ -17,11 +17,15 @@
     gtag('js', new Date());
 
     gtag('config', 'FAKE_GTM_CODE');
+
+    //set scroll to top on refresh/load
+    window.onbeforeunload = function() {window.scrollTo(0,0);}
+
   </script>
 </head>
 
 <body>
-  <app-root>Cargando...</app-root>
+  <app-root><center>Cargando...</center></app-root>
 </body>
 
 </html>
