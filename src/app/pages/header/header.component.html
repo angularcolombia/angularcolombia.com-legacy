@@ -4,7 +4,20 @@
 		<span class="ngco-link-title">Colombia</span>
 	</button>
 	<span class="header-spacer">&nbsp;</span>
-	<button mat-icon-button class="ngco-toolbar-user" routerLink="/login" routerLinkActive="active">
+	<button mat-icon-button class="ngco-toolbar-user" (click)="login()" *ngIf="!user">
 		<mat-icon>person_outline</mat-icon>
+	</button>
+	<mat-menu yPosition="below" xPosition="after" [overlapTrigger]="false" #accountMenu="matMenu" >
+		<button class="ngco-button-avatar-menu-item" mat-menu-item disabled>
+			<mat-icon>person</mat-icon>
+			<span>Cuenta</span>
+		</button>
+		<button class="ngco-button-avatar-menu-item" mat-menu-item (click)="logout()" routerLink="/">
+			<mat-icon>exit_to_app</mat-icon>
+			<span>Salir</span>
+		</button>
+	</mat-menu>
+	<button mat-icon-button class="ngco-toolbar-user ngco-button-avatar-mini" *ngIf="user" [matMenuTriggerFor]="accountMenu">
+		<img class="ngco-toolbar-avatar-image" [src]="user?.photoURL" />
 	</button>
 </mat-toolbar>
