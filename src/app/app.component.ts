@@ -7,6 +7,8 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.styl']
 })
 export class AppComponent implements OnInit {
+  currentYearInFooter:number;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -17,5 +19,7 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0)
     });
+    /**/
+    this.currentYearInFooter=new Date().getFullYear();
   }
 }

@@ -9,7 +9,8 @@ import {
   MatSidenavModule,
   MatIconRegistry,
   MatInputModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatChipsModule
 } from '@angular/material';
 
 /**
@@ -24,7 +25,8 @@ import {
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
   ],
   providers: [MatIconRegistry],
   exports: [
@@ -34,7 +36,8 @@ import {
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule {}

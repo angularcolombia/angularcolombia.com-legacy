@@ -1,78 +1,99 @@
 /*header showcase*/
-
-header.ngco-welcome-showcase {
-    background-image: url('../../../assets/images/welcome_bg.jpg');
-    background-size: cover;
-    background-position: center center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: -56px 0px 0px 0px;
-    z-index: -100;
-    position: relative;
+ section.ngco-welcome-showcase {
+     background-image: url('../../../assets/images/welcome_bg.jpg');
+     background-size: cover;
+     background-position: center center;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     margin: -56px 0px 0px 0px;
 }
-header.ngco-welcome-showcase > mat-card {
-    width: 75%;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 25px;
+ section.ngco-welcome-showcase mat-card.ngco-welcome-message {
+     width: 75%;
+     background: rgba(0, 0, 0, 0.5);
+     border-radius: 25px;
+     position: inherit;
 }
-header.ngco-welcome-showcase > mat-card>mat-card-content {
-    text-align: center;
+ section.ngco-welcome-showcase mat-card.ngco-welcome-message>mat-card-content {
+     text-align: center;
 }
-header.ngco-welcome-showcase > mat-card>mat-card-content>h4,
-header.ngco-welcome-showcase > mat-card>mat-card-content>h6 {
-    margin: 0px;
-    padding: 0px;
-    line-height: 1.2;
-    color: #fff;
-    font-size: 1.2em;
+ section.ngco-welcome-showcase mat-card.ngco-welcome-message>mat-card-content>h4, section.ngco-welcome-showcase mat-card.ngco-welcome-message>mat-card-content>h6 {
+     margin: 0px;
+     padding: 0px;
+     line-height: 1.2;
+     color: #fff;
+     font-size: 1.2em;
 }
-header.ngco-welcome-showcase > mat-card>mat-card-content>h6 {
-    font-weight: normal;
-    margin-top: 5px;
+ section.ngco-welcome-showcase mat-card.ngco-welcome-message>mat-card-content>h6 {
+     font-weight: normal;
+     margin-top: 5px;
 }
-header.ngco-welcome-showcase > mat-card>mat-card-actions>button {
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #f9f9f9;
+section.ngco-welcome-showcase mat-card.ngco-welcome-message>mat-card-actions{
+    overflow: hidden; 
+}
+ section.ngco-welcome-showcase mat-card.ngco-welcome-message>mat-card-actions>button {
+     background: rgba(0, 0, 0, 0.5);
+     border: 1px solid #f9f9f9;
+     position: relative;
+     z-index: 0;
 }
 
 /* welcome info box*/
-section.ngco-welcome-info{
-  background:white;
-  padding: 20px;
-  margin:0 auto;
-  height: 70vh;
-  width:260px;
-  margin-top:10px;
-  margin-bottom:20px;
+ section.ngco-welcome-info{
+     background:white;
+     padding: 20px;
+     margin:0 auto;
+     min-height: 80vh;
+     width:100%;
+     margin-top:10px;
+     margin-bottom:20px;
+}
+
+section.ngco-welcome-info div[fxFlex]{
+    padding: 1em;
+    font-family: 'Lato', sans-serif !important;
+}
+
+section.ngco-welcome-info div[fxFlex]>h1,section.ngco-welcome-info div[fxFlex]>h2{
+    border-bottom: 1px solid #DDD;
+    font-family: 'Lato', sans-serif !important;
+}
+
+section.ngco-welcome-info div[fxFlex]>p.body-1,
+section.ngco-welcome-info div[fxFlex]>button.ngco-welcome-button-more-community{
+    margin-bottom:20px;
+}
+
+section.ngco-welcome-info div[fxFlex] mat-chip{
+    margin:5px;
 }
 
 /*big screens*/
-@media (min-width:420px) and (max-width:540px){
-  section.ngco-welcome-info{
-    width:340px;
-  }
-}
-@media (min-width:540px) and (max-width:800px){
-  section.ngco-welcome-info{
-    width:480px;
-  }
-}
-@media (min-width:800px){
-  section.ngco-welcome-info{
-    width:760px;
-  }
-}
-
-@media(min-width:640px) {
-    header.ngco-welcome-showcase > mat-card {
-        width: 440px;
-    }
-    header.ngco-welcome-showcase > mat-card>mat-card-content>h4,
-    header.ngco-welcome-showcase > mat-card>mat-card-content>h6 {
-        font-size: 1em;
+ @media (min-width:420px) and (max-width:540px){
+     section.ngco-welcome-info{
+         width:340px;
     }
 }
+ @media (min-width:540px) and (max-width:800px){
+     section.ngco-welcome-info{
+         width:480px;
+    }
+}
+ @media (min-width:800px){
+     section.ngco-welcome-info{
+         width:760px;
+    }
+}
+ @media(min-width:640px) {
+     section.ngco-welcome-showcase mat-card.ngco-welcome-message {
+         width: 440px;
+    }
+     section.ngco-welcome-showcase mat-card.ngco-welcome-message>mat-card-content>h4, 
+     section.ngco-welcome-showcase mat-card.ngco-welcome-message>mat-card-content>h6 {
+         font-size: 1em;
+    }
+}
+ 

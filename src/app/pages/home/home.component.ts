@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  /* community topics*/
+  topics = ['AngularJS',
+	'Computer programming',
+	'Front-end Development',
+	'HTML5',
+	'JavaScript Applications',
+	'JavaScript Frameworks',
+	'JavaScript Libraries',
+	'JavaScript',
+	'Software Development',
+	'Web Design',
+	'Web Development',
+  'Web Technology'];
+  
   constructor() { }
 
   ngOnInit() {
