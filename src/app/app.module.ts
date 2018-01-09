@@ -7,7 +7,6 @@ import { CoreModule } from './core/core.module';
 import { RoutingModule } from './routing.module';
 import { SharedModule } from "./components/shared/shared.module";
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -20,16 +19,19 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MaterialModule } from './material.module';
 /*from angular flex layout*/
 import { FlexLayoutModule } from "@angular/flex-layout";
-/*custom components*/
+/*page components*/
+import { HomePageComponent } from './pages/home/home.component';
 import { HeaderComponent } from './pages/header/header.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NotFoundPageComponent } from './pages/not-found/not-found.component';
+import { EventsPageComponent } from './pages/events/events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomePageComponent,
     HeaderComponent,
-    NotFoundComponent
+    NotFoundPageComponent,
+    EventsPageComponent
   ],
   imports: [
     BrowserModule,

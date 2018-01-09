@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'ngco-pages-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.styl']
 })
-export class HomeComponent implements OnInit {
+export class HomePageComponent implements OnInit {
 
   /* community topics*/
   topics = ['AngularJS',

@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HomePageComponent } from './pages/home/home.component';
+import { NotFoundPageComponent } from './pages/not-found/not-found.component';
+import { EventsPageComponent } from './pages/events/events.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomePageComponent
+  },{
+    path: 'eventos',
+    component: EventsPageComponent
   }, {
     path: '**',
-    component: NotFoundComponent
+    component: NotFoundPageComponent
   }
 ]
 @NgModule({
