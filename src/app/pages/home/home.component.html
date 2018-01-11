@@ -15,15 +15,26 @@
   <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayout.sm="column" fxFlex class="coloredContainerX box">
     <div fxFlex class="mat-elevation-z1">
       <h1>Acerca de la comunidad</h1>
-      <p class="body-1">Somos un grupo de desarolladores Web, con especialidad en trabajo con Angular en Colombia. Nos reunimos cada mes para aprender nuevas cosas y hablar de desarrollo web, as&iacute; como para poder compartir informaci&oacute;n o buscar ayuda de forma m&aacute;s f&aacute;cil.</p>
+      <p class="body-1">Somos un grupo de desarolladores Web, con especialidad en trabajo con Angular en Colombia. Nos reunimos cada mes para
+        aprender nuevas cosas y hablar de desarrollo web, as&iacute; como para poder compartir informaci&oacute;n o buscar
+        ayuda de forma m&aacute;s f&aacute;cil.</p>
       <button class="ngco-welcome-button-more-community" mat-raised-button color="primary" routerLink="/comunidad">Conoce m&aacute;s</button>
       <h2>Temas relacionados</h2>
       <mat-chip-list aria-orientation="horizontal">
-          <mat-chip *ngFor="let topic of topics">{{topic}}</mat-chip>
+        <mat-chip *ngFor="let topic of topics">{{topic}}</mat-chip>
       </mat-chip-list>
     </div>
     <div fxFlex class="mat-elevation-z1">
-      <h1 class="display-4">Eventos</h1>
+      <h1 class="display-4">Nuestros eventos</h1>
+      <mat-nav-list role="list">
+        <mat-list-item class="mat-elevation-z1" *ngFor="let event of events" role="listitem" routerLink="/eventos/{{event.id}}">
+          <div class="mat-list-text">
+            <h4>{{event.name}}</h4>
+            <span class="ngco-welcome-events-subheader">{{event.time | date:'EEE MMM d, y @ HH:mm'}}</span>
+          </div>
+        </mat-list-item>
+      </mat-nav-list>
+      <button class="ngco-welcome-button-more-events" mat-raised-button color="primary" routerLink="/eventos">M&aacute;s eventos</button>
     </div>
   </div>
 </section>

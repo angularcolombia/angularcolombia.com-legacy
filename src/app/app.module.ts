@@ -36,16 +36,16 @@ import { EventsPageComponent } from './pages/events/events.component';
   imports: [
     BrowserModule,
     RoutingModule,
-	CoreModule,
+    CoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     SharedModule,
-	BrowserAnimationsModule,
-	/*from angular flex layout*/
-	FlexLayoutModule,
-	/*from angular material*/
-	MaterialModule
+    BrowserAnimationsModule,
+    /*from angular flex layout*/
+    FlexLayoutModule,
+    /*from angular material*/
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthenticationService } from '../services/authentication.service';
+import { MeetupService } from '../services/meetup.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule, HttpClientModule
   ],
-  providers:[
-	AuthenticationService
+  providers: [
+    AuthenticationService,
+    MeetupService
   ],
   declarations: []
 })
