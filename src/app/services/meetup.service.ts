@@ -11,7 +11,8 @@ export class MeetupService {
    * @returns { HttpResponse } The Meetup API's next event data
    */
   public getNextEvents() {
-    return this.http.get<any>(environment.meetupApi);
+    /*return this.http.get<any>(environment.meetupApi);*/
+    return this.http.get<any>(`${environment.meetupApi}/v3/events/next`);
   }
 
   /**

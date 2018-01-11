@@ -16,6 +16,17 @@ Config.procesApiResponse = (expressResponse, curlError, curlReponseBody) => {
 
 /* ::: Community events ::: */
 
+/* Get next events */
+Config.v3.getNextEvents = (apiKey) => {
+    let eventsUrl = Config.apiHost + Config.groupName + '/events';
+    if (!apiKey) {
+        throw new Error('must use an API KEY');
+    }
+    eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey)
+        .concat('&status=upcoming&desc=false&fields=plain_text_description');
+    return eventsUrl;
+};
+
 /* Get all events */
 Config.v3.getAllEvents = (apiKey) => {
     let eventsUrl = Config.apiHost + Config.groupName + '/events';

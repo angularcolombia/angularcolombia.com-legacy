@@ -9,6 +9,13 @@ const express = require('express'),
 
 const api_key = process.env.MEETUP_API_KEY;
 
+/*get next events*/
+router.get('/v3/events/next', (req, res) => {
+    request(MeetupApi.v3.getNextEvents(api_key), (_error, _response, _body) => {
+        MeetupApi.procesApiResponse(res, _error, _body);
+    });
+});
+
 /*get events*/
 router.get('/v3/events', (req, res) => {
     request(MeetupApi.v3.getAllEvents(api_key), (_error, _response, _body) => {
