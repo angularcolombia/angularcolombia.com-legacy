@@ -28,6 +28,7 @@ import { HomePageComponent } from './pages/home/home.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { NotFoundPageComponent } from './pages/not-found/not-found.component';
 import { EventsPageComponent } from './pages/events/events.component';
+import { EventDetailComponent } from './pages/event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { EventsPageComponent } from './pages/events/events.component';
     HomePageComponent,
     HeaderComponent,
     NotFoundPageComponent,
-    EventsPageComponent
+    EventsPageComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,

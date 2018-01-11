@@ -29,4 +29,11 @@ export class MeetupService {
     return this.http.get<any>(`${environment.meetupApi}/v3/events`);
   }
 
+  /**
+  * @returns { HttpResponse } The Meetup API's selected event data using event id.
+  */
+  public getEventDetails(eventId: string) {
+    return this.http.get<any>(`${environment.meetupApi}/v3/events/${eventId}`);
+  }
+
 }

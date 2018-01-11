@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home/home.component';
 import { NotFoundPageComponent } from './pages/not-found/not-found.component';
 import { EventsPageComponent } from './pages/events/events.component';
+import { EventDetailComponent } from './pages/event-detail/event-detail.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,9 @@ const routes: Routes = [
   }, {
     path: 'eventos',
     component: EventsPageComponent
+  },{
+    path: 'eventos/:event_id',
+    component: EventDetailComponent
   }, {
     path: '**',
     component: NotFoundPageComponent
