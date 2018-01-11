@@ -15,11 +15,15 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
-/*from angular material*/
+/* Modules related to Google analytics*/
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
+/* from angular material*/
 import { MaterialModule } from './material.module';
-/*from angular flex layout*/
+/* from angular flex layout*/
 import { FlexLayoutModule } from "@angular/flex-layout";
-/*page components*/
+/* page components*/
 import { HomePageComponent } from './pages/home/home.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { NotFoundPageComponent } from './pages/not-found/not-found.component';
@@ -45,7 +49,9 @@ import { EventsPageComponent } from './pages/events/events.component';
     /*from angular flex layout*/
     FlexLayoutModule,
     /*from angular material*/
-    MaterialModule
+    MaterialModule,
+    /*from angular modules related to google analytics*/
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
   providers: [],
   bootstrap: [AppComponent]

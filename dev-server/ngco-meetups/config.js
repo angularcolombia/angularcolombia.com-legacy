@@ -23,7 +23,7 @@ Config.v3.getNextEvents = (apiKey) => {
         throw new Error('must use an API KEY');
     }
     eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey)
-        .concat('&status=upcoming&desc=false&fields=plain_text_description');
+        .concat('&status=upcoming&desc=false&fields=plain_text_description,comment_count');
     return eventsUrl;
 };
 
@@ -34,7 +34,7 @@ Config.v3.getAllEvents = (apiKey) => {
         throw new Error('must use an API KEY');
     }
     eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey)
-        .concat('&status=upcoming,past,proposed&desc=true&fields=plain_text_description');
+        .concat('&status=upcoming,past,proposed&desc=true&fields=plain_text_description,comment_count');
     return eventsUrl;
 };
 
@@ -59,7 +59,8 @@ Config.v3.getEventComments = (eventId, apiKey) => {
         throw new Error('must use an API KEY');
     }
     let eventsUrl = Config.apiHost + Config.groupName + '/events/' + eventId + '/comments';
-    eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey);
+    eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey)
+        .concat('&desc=true');
     return eventsUrl;
 };
 
