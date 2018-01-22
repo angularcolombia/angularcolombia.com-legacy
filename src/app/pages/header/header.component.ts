@@ -13,13 +13,13 @@ import * as firebase from 'firebase/app';
 export class HeaderComponent implements OnInit {
 
   user;
-  
+
   constructor(private authenticationService: AuthenticationService) { }
 
   login() {
-    return this.authenticationService.signInWithGoogle()
+    return this.authenticationService.signInWithGoogle();
   }
-  
+
   logout() {
     this.authenticationService.signOut();
     this.user = null;

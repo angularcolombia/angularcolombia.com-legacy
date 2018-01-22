@@ -2,7 +2,6 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-import { LoginComponent } from './shared/login/login.component';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -11,7 +10,6 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        LoginComponent
       ],
       imports: [RouterTestingModule],
       providers: [ {provide: AngularFireAuth, useValue: mockAFAuth} ]

@@ -36,4 +36,11 @@ export class MeetupService {
     return this.http.get<any>(`${environment.meetupApi}/v3/events/${eventId}`);
   }
 
+  /**
+  * @returns { HttpResponse } The Meetup API's selected event data using event id.
+  */
+  public getEventHosts(eventId: string) {
+    return this.http.get<any>(`${environment.meetupApi}/v3/events/${eventId}/hosts`);
+  }
+
 }

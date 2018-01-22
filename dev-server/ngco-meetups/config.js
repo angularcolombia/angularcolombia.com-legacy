@@ -90,6 +90,18 @@ Config.v3.getEventRsvps = (eventId, apiKey) => {
     return eventsUrl;
 };
 
+/* Get event hosts using event id */
+Config.v3.getEventHosts = (eventId, apiKey) => {
+    if (!eventId) {
+        throw new Error('must use an event ID');
+    } else if (!apiKey) {
+        throw new Error('must use an API KEY');
+    }
+    let eventsUrl = Config.apiHost + Config.groupName + '/events/' + eventId + '/hosts';
+    eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey);
+    return eventsUrl;
+};
+
 /* ::: Community photos ::: */
 
 /* Get all photos */

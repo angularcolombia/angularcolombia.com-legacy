@@ -51,4 +51,12 @@ router.get('/v3/events/:event_id/rsvps', (req, res) => {
     });
 });
 
+
+/*get event hosts*/
+router.get('/v3/events/:event_id/hosts', (req, res) => {
+    request(MeetupApi.v3.getEventHosts(req.params.event_id, api_key), (_error, _response, _body) => {
+        MeetupApi.procesApiResponse(res, _error, _body);
+    });
+});
+
 module.exports = router;

@@ -1,7 +1,12 @@
-<section class="ngco-event-info-content mat-typography">
-  <mat-card class="container">
-    <div fxLayout="row" fxLayoutWrap >
+<div *ngIf="!isDataAvailable" class="loading">Cargando evento...</div>
+<header *ngIf="isDataAvailable" class="ngco-event-info-header containerX mat-elevation-z1 mat-typography">
+  <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayout.sm="column" fxFlex class="coloredContainerX box ngco-event-data-wrapper ngco-event-title-box">
+    <div fxFlex>
+      <span class="caption">{{eventInfo?.time | date:'EEE, MMM d, y @ HH:mm'}}</span>
       <h1>{{eventInfo?.name}}</h1>
     </div>
-  </mat-card>
-</section>
+    <div fxFlex>
+      Vas a ir?
+    </div>
+  </div>
+</header>
