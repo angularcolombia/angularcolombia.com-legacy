@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MeetupService } from '../../services/meetup.service';
+import { MeetupService } from '../../core/services/meetup.service';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/do';
@@ -15,8 +15,14 @@ export class EventDetailComponent implements OnInit, OnDestroy {
 
   eventId: string;
   eventInfo: any;
+  eventHosts: any;
+  eventHostsLength: number;
+  firstHost: any;
   isDataAvailable = false;
   private ngUnsubscribe: Subject<void> = new Subject<void>();
+
+  /* responsive photo album grid */
+  public photoAlbumCols: number = 4;
 
   constructor(private activeRoute: ActivatedRoute,
     private meetupService: MeetupService) { }
@@ -28,9 +34,11 @@ export class EventDetailComponent implements OnInit, OnDestroy {
       .subscribe((event) => { this.eventInfo = event; this.isDataAvailable = true; });
     this.meetupService.getEventHosts(this.eventId)
       .takeUntil(this.ngUnsubscribe)
-      .do(x => console.log('event hosts', { item: x }))
-      .map(data => data.slice(0, 5))
-      .subscribe(event => this.eventInfo = event);
+      .subscribe((eventHosts) => {
+        this.eventHosts = eventHosts;
+        this.eventHostsLength = eventHosts.length;
+        this.firstHost = eventHosts[0]; 
+      });
   }
 
   ngOnDestroy(): void {

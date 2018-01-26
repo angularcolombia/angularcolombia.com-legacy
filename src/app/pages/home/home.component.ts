@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MeetupService } from '../../services/meetup.service';
+import { MeetupService } from '../../core/services/meetup.service';
 
 @Component({
   selector: 'app-pages-home',

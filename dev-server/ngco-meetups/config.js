@@ -47,7 +47,7 @@ Config.v3.getEventDetail = (eventId, apiKey) => {
     }
     let eventsUrl = Config.apiHost + Config.groupName + '/events/' + eventId;
     eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey)
-        .concat('&fields=plain_text_description,comment_count,short_link');
+        .concat('&fields=photo_album,comment_count,short_link,duration');
     return eventsUrl;
 };
 

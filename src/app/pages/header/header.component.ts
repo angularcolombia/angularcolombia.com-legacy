@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 /*import details for authentication service*/
-import { AuthenticationService } from './../../services/authentication.service';
+import { AuthenticationService } from '../../core/services/authentication.service';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -12,7 +12,7 @@ import * as firebase from 'firebase/app';
 })
 export class HeaderComponent implements OnInit {
 
-  user;
+  user: any;
 
   constructor(private authenticationService: AuthenticationService) { }
 

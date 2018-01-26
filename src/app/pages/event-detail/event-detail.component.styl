@@ -1,44 +1,133 @@
-/* mobile first*/
-header.ngco-event-info-header{
-    background: #fbfbfb;
-    text-align:center;
-    min-height: 150px;
-    margin: 56px 0 0 0;
-    margin-bottom:20px;
-    padding: 5px 0 0 0;
+/* mobile first */
+
+/* header content - title */
+header.ngco-event-info-header {
+  background: #fbfbfb;
+  text-align: center;
+  min-height: 150px;
+  margin: 56px 0 0 0;
+  margin-bottom: 20px;
+  padding: 5px 0 0 0;
 }
 
-
-div.ngco-event-data-wrapper{
-    margin:0 auto;
-    width: 300px;
+div.ngco-content-container {
+  margin: 0 auto;
+  width: 300px;
 }
 
-section.ngco-event-info-content{
-    margin: 80px 0px 0px 0px;
+header.ngco-event-info-header * {
+  font-family: 'lato',sans-serif;
 }
 
-header.ngco-event-info-header *{
-    font-family:'lato',sans-serif;
+div.event-detail-title>span.caption, div.event-detail-first-host>span.caption {
+  font-size: 12px;
+  color: #999;
+  text-align: left;
+  display: block;
+  padding: 5px;
+  margin-top: 5px;
 }
 
-div.ngco-event-title-box span.caption{
-    font-size:12px;
-    color:#999;
-    text-align:left;
-    width:100%;
-    display:block;
-    padding: 5px;
-    margin-top:5px;
+div.event-detail-title>h1 {
+  text-align: left;
+  color: #333;
+  line-height: 24px;
 }
 
-div.ngco-event-title-box>div[fxFlex]>h1{
-    text-align: left;
-    color: #333;
-    line-height: 24px;
+div.event-detail-title {
+  margin: 0 auto;
+  width: 280px;
 }
 
-div.ngco-event-title-box>div[fxFlex]{
-    margin:0 auto;
-    width:280px;
+/* header content - rvsp */
+
+/* side content - time*/
+div.ngco-content-container > div.event-detail-side > div.event-side-time {
+  padding: 10px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+div.ngco-content-container > div.event-detail-side > div.event-side-time>mat-icon {
+  line-height: 32px;
+  height: 32px;
+  width: 32px;
+  font-size: 32px;
+  margin: 5px;
+  margin-right: 16px;
+  margin-top: 0;
+}
+
+div.ngco-content-container > div.event-detail-side > div.event-side-time>div>h3,
+div.ngco-content-container > div.event-detail-side > div.event-side-time>div>h4 {
+  margin: 0px;
+  padding: 0;
+  font-family: 'lato',sans-serif;
+}
+
+div.ngco-content-container > div.event-detail-side > div.event-side-time>div>h3 {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: bold;
+}
+
+div.ngco-content-container > div.event-detail-side > div.event-side-time>div>h4 {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+/* main content - description*/
+div.event-detail-main > div.event-content-data, 
+div.event-detail-main > div.event-content-comments, 
+div.event-detail-main > div.event-content-photos {
+  padding: 10px;
+  width: 280px;
+}
+
+div.event-detail-main > div.event-content-comments, 
+div.event-detail-main > div.event-content-photos {
+  margin-top: 10px;
+}
+
+div.event-detail-main > div.event-content-data>.body-1 /deep/ * {
+  font-size: 12px !important;
+}
+
+div.event-detail-main > div.event-content-data>.body-1 /deep/ img {
+  width: 100%;
+}
+
+div.event-detail-main > div.event-content-data>h1, 
+div.event-detail-main > div.event-content-comments>h1, 
+div.event-detail-main > div.event-content-photos>h1 {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+  font-family: 'lato',sans-serif;
+}
+
+/* main content - photos - sample*/
+div.event-detail-main > div.event-content-photos mat-grid-list.photo-album-sample img {
+  margin: 2px;
+  border: 1px solid #9e9e9e;
+  width: 80px;
+  height: 60px;
+}
+
+/* media queries - large screens (min-width: 768px) */
+@media only screen and (min-width: 768px) {
+  section.ngco-content-section > div.ngco-content-container {
+    width: 780px;
+  }
+
+  div.event-detail-main > div.event-content-data, 
+  div.event-detail-main > div.event-content-comments, 
+  div.event-detail-main > div.event-content-photos {
+    width: 480px;
+    margin-right:10px;
+  }
+
+  section.ngco-content-section> div.ngco-content-container > div.event-detail-side > div.event-side-time {
+    width: 280px; 
+  }
 }

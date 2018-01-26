@@ -1,12 +1,64 @@
-<div *ngIf="!isDataAvailable" class="loading">Cargando evento...</div>
-<header *ngIf="isDataAvailable" class="ngco-event-info-header containerX mat-elevation-z1 mat-typography">
-  <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayout.sm="column" fxFlex class="coloredContainerX box ngco-event-data-wrapper ngco-event-title-box">
-    <div fxFlex>
-      <span class="caption">{{eventInfo?.time | date:'EEE, MMM d, y @ HH:mm'}}</span>
+<header *ngIf="isDataAvailable" class="ngco-event-info-header mat-elevation-z1 mat-typography">
+  <div class="ngco-content-container">
+    <div class="event-detail-title">
+      <span class="caption" *ngIf="eventInfo?.status === 'upcoming'">{{eventInfo?.time | date:'EEE, MMM d, y @ HH:mm'}}</span>
+      <span class="caption" *ngIf="eventInfo?.status === 'past'">Encuentro pasado</span>
       <h1>{{eventInfo?.name}}</h1>
+      <div class="event-detail-first-host">
+        <span class="caption">Organizado por:&nbsp;
+          <a href="#">{{firstHost?.name}}&nbsp;
+            <span *ngIf="eventHostsLength>1">y otros {{eventHostsLength-1}}</span>
+          </a>
+        </span>
+      </div>
     </div>
-    <div fxFlex>
-      Vas a ir?
+    <div class="event-detail-side">
+      <div class="event-detail-past" *ngIf="eventInfo?.status === 'upcoming'">
+        <span>¿Vas a ir? </span>
+      </div>
     </div>
   </div>
 </header>
+<section class="ngco-content-section mat-typography">
+  <div class="ngco-content-container container" fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="10px">
+    <div class="event-detail-side" flex-order.xs-sm="1" fxFlexOrder="2">
+      <div class="mat-elevation-z1 event-side-time" fxLayout="row" fxLayoutAlign="start">
+        <mat-icon color="accent">alarm</mat-icon>
+        <div>
+          <h3>{{eventInfo?.time | date:'EEEE, MMMM d'}}</h3>
+          <h4>{{eventInfo?.local_time}} a {{eventInfo?.time + (eventInfo?.duration || 10800000) | date: 'HH:mm'}}</h4>
+        </div>
+      </div>
+      <div class="mat-elevation-z1 event-side-time" fxLayout="row" fxLayoutAlign="start">
+        <mat-icon color="accent">map</mat-icon>
+        <div>
+          <h3>{{eventInfo?.venue.name}}</h3>
+          <h4>{{eventInfo?.venue.address_1}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="event-detail-main">
+      <div class="mat-elevation-z1 event-content-data">
+        <h1 class="title">Descripci&oacute;n:</h1>
+        <div class="body-1" [innerHTML]="eventInfo?.description"></div>
+      </div>
+      <div class="mat-elevation-z1 event-content-photos">
+        <h1 class="title">Fotos
+          <span *ngIf="eventInfo?.photo_album">({{eventInfo?.photo_album.photo_count}})</span>
+        </h1>
+        <button mat-raised-button *ngIf="eventInfo?.status !== 'past'">
+          <mat-icon>add_a_photo</mat-icon>
+          <span>&nbsp;Agregar</span>
+        </button>
+        <mat-grid-list [cols]="photoAlbumCols" class="photo-album-sample" *ngIf="eventInfo?.photo_album" gutterSize="4">
+          <mat-grid-tile *ngFor="let samplePhoto of eventInfo?.photo_album.photo_sample" colspan="1" rowspan="1">
+            <img src="{{samplePhoto.thumb_link}}">
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="mat-elevation-z1 event-content-comments">
+        <h1 class="title">Comentarios ({{eventInfo?.comment_count}})</h1>
+      </div>
+    </div>
+  </div>
+</section>
