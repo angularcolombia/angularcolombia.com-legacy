@@ -1,3 +1,5 @@
+import { RouteGuardService } from './core/services/route-guard.service';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home/home.component';
@@ -22,6 +24,7 @@ const routes: Routes = [
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[RouteGuardService]
 })
 export class RoutingModule { }
