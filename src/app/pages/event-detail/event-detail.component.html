@@ -21,7 +21,7 @@
 </header>
 <section class="ngco-content-section mat-typography">
   <div class="ngco-content-container container" fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="10px">
-    <div class="event-detail-side" flex-order.xs-sm="1" fxFlexOrder="2">
+    <div class="event-detail-side" fxFlexOrder.xs="0" fxFlexOrder="2">
       <div class="mat-elevation-z1 event-side-time" fxLayout="row" fxLayoutAlign="start">
         <mat-icon color="accent">alarm</mat-icon>
         <div>
@@ -33,7 +33,8 @@
         <mat-icon color="accent">map</mat-icon>
         <div>
           <h3>{{eventInfo?.venue.name}}</h3>
-          <h4>{{eventInfo?.venue.address_1}}</h4>
+          <h4>{{eventInfo?.venue.address_1+', '+eventInfo?.venue.city}}</h4>
+          <img fxHide="false" fxHide.xs class="event-venue-map" src="{{eventLocationImg}}" alt="{{eventInfo?.venue.name}}, {{eventInfo?.venue.city}}">
         </div>
       </div>
     </div>
@@ -42,7 +43,7 @@
         <h1 class="title">Descripci&oacute;n:</h1>
         <div class="body-1" [innerHTML]="eventInfo?.description"></div>
       </div>
-      <div class="mat-elevation-z1 event-content-photos">
+      <div class="mat-elevation-z1 event-content-photos" *ngIf="eventInfo?.photo_album">
         <h1 class="title">Fotos
           <span *ngIf="eventInfo?.photo_album">({{eventInfo?.photo_album.photo_count}})</span>
         </h1>
@@ -58,6 +59,13 @@
       </div>
       <div class="mat-elevation-z1 event-content-comments">
         <h1 class="title">Comentarios ({{eventInfo?.comment_count}})</h1>
+        <mat-list class="event-comments-list" role="list">
+          <mat-list-item *ngFor="let commentItem of eventInfo?.comment_sample" role="listitem">
+            <img class="event-comment-avatar-img" [src]="commentItem?.member.photo.thumb_link" mat-list-icon >
+            <h4 mat-line>{{commentItem.member.name}}, {{commentItem.created | relativeDate}}</h4>
+            <p mat-line style="display:inline;">{{commentItem.comment}}</p>
+          </mat-list-item>
+        </mat-list>
       </div>
     </div>
   </div>

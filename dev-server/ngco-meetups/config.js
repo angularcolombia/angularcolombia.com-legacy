@@ -34,7 +34,7 @@ Config.v3.getAllEvents = (apiKey) => {
         throw new Error('must use an API KEY');
     }
     eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey)
-        .concat('&status=upcoming,past,proposed&desc=true&fields=plain_text_description,comment_count');
+        .concat('&status=upcoming,past,proposed&desc=true&fields=comment_count,featured,featured_photo');
     return eventsUrl;
 };
 
@@ -47,7 +47,7 @@ Config.v3.getEventDetail = (eventId, apiKey) => {
     }
     let eventsUrl = Config.apiHost + Config.groupName + '/events/' + eventId;
     eventsUrl = eventsUrl.concat('?sign=true&key=' + apiKey)
-        .concat('&fields=photo_album,comment_count,short_link,duration');
+        .concat('&fields=photo_album,comment_count,short_link,duration,featured_photo,comment_sample');
     return eventsUrl;
 };
 

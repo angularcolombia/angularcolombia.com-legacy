@@ -49,6 +49,7 @@ app.use(require('body-parser').urlencoded({ extended: false }));
 app.use('/meetup', require('./ngco-meetups/events_v3'));
 app.use('/meetup', require('./ngco-meetups/photos_v3'));
 app.use('/meetup', require('./ngco-meetups/venues_v3'));
+app.use('/meetup', require('./ngco-meetups/google_staticmaps'));
 
 app.listen(port, () => {
   console.log(`listening in port ${port}...`);

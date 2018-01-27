@@ -29,6 +29,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { NotFoundPageComponent } from './pages/not-found/not-found.component';
 import { EventsPageComponent } from './pages/events/events.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
+import { RelativeDatePipe } from './core/pipes/relative-date.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EventDetailComponent } from './pages/event-detail/event-detail.componen
     HeaderComponent,
     NotFoundPageComponent,
     EventsPageComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    RelativeDatePipe
   ],
   imports: [
     BrowserModule,
