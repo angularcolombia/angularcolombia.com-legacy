@@ -1,6 +1,10 @@
+mat-icon{
+  font-family: 'Material Icons' !important;
+}
+
 /* mobile first*/
 header.ngco-events-header {
-  background: #fbfbfb;
+  background: #f44336;
   text-align: center;
   min-height: 72px;
   margin: 54px 0 0 0;
@@ -14,9 +18,10 @@ header.ngco-events-header * {
 
 header.ngco-events-header>h1 {
   font-size: 32px;
-  color: #333;
+  color: #fff;
   line-height: 32px;
   padding: 10px;
+  margin-top:10px;
 }
 
 .ngco-events-tabs-container {
@@ -41,4 +46,42 @@ header.ngco-events-header>h1 {
 .ngco-events-tabs-container /deep/ div.tab-content {
   padding: 16px;
   min-height: 320px;
+}
+
+/* events list item box */
+div.ngco-events-item-box{
+  padding:10px;
+  margin:5px;
+  margin-bottom:10px;
+}
+
+div.ngco-events-item-box > h1{
+  font-size: 1.2em;
+}
+
+div.ngco-events-item-box > h3{
+  font-size: 1em;
+  line-height:1.2em;
+  height:2.3em;
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  margin: 0 auto;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom:2px;
+  padding-bottom:2px;
+}
+
+div.ngco-events-item-box > div.item-bottom-detail{
+  display:block;
+}
+
+div.ngco-events-item-box > div.item-bottom-detail >.item-date,
+div.ngco-events-item-box > div.item-bottom-detail >.item-comments{
+  font-size:12px;
+  font-weight:0;
+  color:#333;
 }

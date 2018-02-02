@@ -5,7 +5,7 @@ import { environment } from '../environments/environment';
 
 import { CoreModule } from './core/core.module';
 import { RoutingModule } from './routing.module';
-import { SharedModule } from "./components/shared/shared.module";
+import { SharedModule } from './components/shared/shared.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +22,7 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 /* from angular material*/
 import { MaterialModule } from './material.module';
 /* from angular flex layout*/
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 /* page components*/
 import { HomePageComponent } from './pages/home/home.component';
 import { HeaderComponent } from './pages/header/header.component';
@@ -31,7 +31,6 @@ import { EventsPageComponent } from './pages/events/events.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
 /* pipes */
 import { RelativeDatePipe } from './core/pipes/relative-date.pipe';
-import { EventsByStatusFilterPipe } from './core/pipes/events-by-status.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,6 @@ import { EventsByStatusFilterPipe } from './core/pipes/events-by-status.pipe';
     EventsPageComponent,
     EventDetailComponent,
     RelativeDatePipe,
-    EventsByStatusFilterPipe
   ],
   imports: [
     BrowserModule,
