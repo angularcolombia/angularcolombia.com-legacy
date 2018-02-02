@@ -12,7 +12,7 @@
           <a routerLink="/eventos/{{item.id}}">{{item.name}}</a>
         </h3>
         <div class="item-bottom-detail">
-          <span class="caption item-date">{{item.created | relativeDate}}</span>
+          <span class="caption item-date">{{item.created | date:'EEE MMM d, y'}}</span>
           <span class="caption item-comments" *ngIf="item.comment_count && item.comment_count>0">
             |&nbsp;{{item.comment_count}}&nbsp;comentario{{item.comment_count>1?'s':''}}
           </span>
