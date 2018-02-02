@@ -12,7 +12,8 @@ import {
   MatFormFieldModule,
   MatChipsModule,
   MatListModule,
-  MatGridListModule
+  MatGridListModule,
+  MatTabsModule
 } from '@angular/material';
 
 /**
@@ -30,7 +31,8 @@ import {
     MatCardModule,
     MatChipsModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule, 
+    MatTabsModule
   ],
   providers: [MatIconRegistry],
   exports: [
@@ -41,9 +43,10 @@ import {
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatChipsModule, 
+    MatChipsModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTabsModule
   ]
 })
 export class MaterialModule { }

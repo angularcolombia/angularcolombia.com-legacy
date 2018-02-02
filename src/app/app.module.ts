@@ -29,7 +29,9 @@ import { HeaderComponent } from './pages/header/header.component';
 import { NotFoundPageComponent } from './pages/not-found/not-found.component';
 import { EventsPageComponent } from './pages/events/events.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
+/* pipes */
 import { RelativeDatePipe } from './core/pipes/relative-date.pipe';
+import { EventsByStatusFilterPipe } from './core/pipes/events-by-status.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { RelativeDatePipe } from './core/pipes/relative-date.pipe';
     NotFoundPageComponent,
     EventsPageComponent,
     EventDetailComponent,
-    RelativeDatePipe
+    RelativeDatePipe,
+    EventsByStatusFilterPipe
   ],
   imports: [
     BrowserModule,

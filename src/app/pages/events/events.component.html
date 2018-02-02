@@ -1,3 +1,25 @@
-<p>
-  events works!
-</p>
+<header class="ngco-events-header mat-elevation-z1 mat-typography">
+  <h1 class="headline">Nuestros eventos</h1>
+</header>
+<mat-tab-group class="ngco-events-tabs-container mat-elevation-z1 mat-typography">
+  <mat-tab label="Pr&oacute;ximos">
+    <div class="tab-content">
+      <div *ngIf="!upcomingEvents || upcomingEvents.length<1" class="mat-elevation-z1">
+        <h1>No hay eventos pr&oacute;ximos.</h1>
+      </div>
+      <div *ngFor="let item of upcomingEvents" class="mat-elevation-z1">
+        <h3>{{item.name}}</h3>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Pasados">
+    <div class="tab-content">
+      <div *ngIf="!pastEvents || pastEvents.length<1" class="mat-elevation-z1">
+        <h1>No hay eventos pasados.</h1>
+      </div>
+      <div *ngFor="let item2 of pastEvents" class="mat-elevation-z1">
+        <h3>{{item2.name}}</h3>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
