@@ -75,6 +75,12 @@ div.ngco-events-item-box > h3{
   padding-bottom:2px;
 }
 
+div.ngco-events-item-box > h3>a{
+  text-decoration:none;
+  color:#333;
+  font-weight:bold;
+}
+
 div.ngco-events-item-box > div.item-bottom-detail{
   display:block;
 }
@@ -84,4 +90,12 @@ div.ngco-events-item-box > div.item-bottom-detail >.item-comments{
   font-size:12px;
   font-weight:0;
   color:#333;
+}
+
+/* big screens */
+@media(min-width:640px){
+div.events-list-items-box{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
 }

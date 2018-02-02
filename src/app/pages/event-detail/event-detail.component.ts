@@ -23,7 +23,7 @@ export class EventDetailComponent implements OnInit, OnDestroy {
   eventLocationImg: string;
 
   /* responsive photo album grid */
-  public photoAlbumCols: number = 4;
+  public photoAlbumCols = 4;
 
   constructor(private activeRoute: ActivatedRoute,
     private meetupService: MeetupService) { }

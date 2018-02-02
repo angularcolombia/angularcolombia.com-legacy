@@ -19,7 +19,7 @@
     </div>
   </div>
 </header>
-<section class="ngco-content-section mat-typography">
+<section class="ngco-content-section mat-typography" *ngIf="isDataAvailable">
   <div class="ngco-content-container container" fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="10px">
     <div class="event-detail-side" fxFlexOrder.xs="0" fxFlexOrder="2">
       <div class="mat-elevation-z1 event-side-time" fxLayout="row" fxLayoutAlign="start">
@@ -52,13 +52,13 @@
           <span>&nbsp;Agregar</span>
         </button>
         <mat-grid-list [cols]="photoAlbumCols" class="photo-album-sample" *ngIf="eventInfo?.photo_album" gutterSize="4">
-          <mat-grid-tile *ngFor="let samplePhoto of eventInfo?.photo_album.photo_sample" colspan="1" rowspan="1">
-            <img src="{{samplePhoto.thumb_link}}">
+          <mat-grid-tile *ngFor="let samplePhoto of eventInfo?.photo_album?.photo_sample" colspan="1" rowspan="1">
+            <img src="{{samplePhoto?.thumb_link}}">
           </mat-grid-tile>
         </mat-grid-list>
       </div>
       <div class="mat-elevation-z1 event-content-comments">
-        <h1 class="title">Comentarios ({{eventInfo?.comment_count}})</h1>
+        <h1 class="title">Comentarios ({{eventInfo.comment_count}})</h1>
         <mat-list class="event-comments-list" role="list">
           <mat-list-item *ngFor="let commentItem of eventInfo?.comment_sample" role="listitem">
             <img class="event-comment-avatar-img" [src]="commentItem?.member.photo.thumb_link" mat-list-icon >

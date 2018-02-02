@@ -8,7 +8,15 @@
         <h1>No hay eventos pr&oacute;ximos.</h1>
       </div>
       <div *ngFor="let item of upcomingEvents" class="mat-elevation-z1 ngco-events-item-box">
-        <h3>{{item.name}}</h3>
+        <h3>
+          <a routerLink="/eventos/{{item.id}}">{{item.name}}</a>
+        </h3>
+        <div class="item-bottom-detail">
+          <span class="caption item-date">{{item.created | relativeDate}}</span>
+          <span class="caption item-comments" *ngIf="item.comment_count && item.comment_count>0">
+            |&nbsp;{{item.comment_count}}&nbsp;comentario{{item.comment_count>1?'s':''}}
+          </span>
+        </div>
       </div>
     </div>
   </mat-tab>
@@ -19,7 +27,9 @@
       </div>
       <div class="events-list-items-box">
         <div *ngFor="let item2 of pastEvents" class="mat-elevation-z1 ngco-events-item-box">
-          <h3>{{item2.name}}</h3>
+          <h3>
+            <a routerLink="/eventos/{{item2.id}}">{{item2.name}}</a>
+          </h3>
           <div class="item-bottom-detail">
             <span class="caption item-date">{{item2.created | relativeDate}}</span>
             <span class="caption item-comments" *ngIf="item2.comment_count && item2.comment_count>0">
